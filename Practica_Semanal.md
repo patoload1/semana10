@@ -4,7 +4,7 @@ Carrera: Ingeniería de Sistemas de Información
 
 ---
 
-# Semana 6 – Práctica semanal (Versión Avanzada)
+# Semana 6 – Práctica semanal 
 
 **Tema:** Objeto base para manejo de colecciones – Nivel avanzado
 
@@ -46,7 +46,7 @@ Requisitos:
 
 ---
 
-# Actividad 2 (Clonación profunda + Regla de Tres)
+# Actividad 2 
 
 Extienda la jerarquía anterior:
 
