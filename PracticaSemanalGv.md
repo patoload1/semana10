@@ -251,3 +251,24 @@ Responder:
 
 ---
 
+
+
+class Lector : public IPrestarLibro, public IDevolverLibro, public IConsultarCatalogo {
+private:
+    string nombre;
+public:
+    Lector(string n) : nombre(n) {}
+
+    void prestarLibro() override {
+        cout << nombre << " solicita el préstamo de un libro." << endl;
+    }
+
+    void devolverLibro() override {
+        cout << nombre << " devuelve un libro." << endl;
+    }
+
+    void consultarCatalogo() override {
+        cout << nombre << " consulta el catálogo de libros." << endl;
+    }
+};
+
