@@ -250,7 +250,21 @@ Responder:
 * Separación en `.h` y `.cpp`
 
 ---
+class ISistemaBiblioteca {
+public:
+    virtual void prestarLibro() = 0;
+    virtual void devolverLibro() = 0;
+    virtual void registrarLibro() = 0;
+    virtual void gestionarUsuarios() = 0;
+    virtual void consultarCatalogo() = 0;
+    virtual ~ISistemaBiblioteca() = default;
+};
 
+class IPrestarLibro {
+public:
+    virtual void prestarLibro() = 0;
+    virtual ~IPrestarLibro() = default;
+};
 
 
 class Lector : public IPrestarLibro, public IDevolverLibro, public IConsultarCatalogo {
