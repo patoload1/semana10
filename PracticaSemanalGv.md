@@ -316,7 +316,8 @@ public:
 ```
 
 
-Instrucción para el estudiante
+##  Instrucción para el estudiante
+
 Analice el diseño presentado y determine si cumple adecuadamente con el Principio de Segregación de Interfaces (ISP), el cual establece que una clase no debe verse obligada a depender de métodos que no utiliza.
 En el código se observa una interfaz general llamada ISistemaBiblioteca que concentra múltiples responsabilidades, tales como prestar libros, devolverlos, registrar libros, gestionar usuarios y consultar el catálogo. Sin embargo, no todos los actores del sistema necesariamente requieren todas esas operaciones. Por ejemplo, un lector probablemente pueda consultar el catálogo, solicitar préstamos y devolver libros, pero no debería encargarse del registro de libros ni de la gestión de usuarios.
 A partir de esta situación, realice un análisis crítico del diseño y responda:
@@ -324,18 +325,13 @@ A partir de esta situación, realice un análisis crítico del diseño y respond
 
 ¿Qué problema de diseño podría surgir al utilizar una interfaz demasiado grande como ISistemaBiblioteca?
 
-
 ¿Por qué sería incorrecto obligar a una clase como Lector a implementar métodos que no necesita?
-
 
 Explique de qué manera el uso de interfaces pequeñas y específicas como IPrestarLibro favorece el cumplimiento del principio ISP.
 
-
 Proponga un rediseño del sistema utilizando interfaces separadas según responsabilidades.
 
-
 Justifique por qué el nuevo diseño sería más mantenible, flexible y escalable.
-
 
 Lo que se espera en su análisis
 El estudiante debe identificar que una interfaz grande viola el principio ISP cuando agrupa responsabilidades que no aplican a todos los tipos de usuario. También debe reconocer que una clase como Lector solo debería implementar las operaciones que realmente necesita.
