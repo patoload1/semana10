@@ -250,6 +250,69 @@ Responder:
 * Separación en `.h` y `.cpp`
 
 ---
+# Análisis de diseño orientado a objetos – Aplicación del principio ISP
+
+Considere el siguiente fragmento de código en C++ relacionado con un sistema de biblioteca:
+
+```cpp
+class ISistemaBiblioteca {
+public:
+    virtual void prestarLibro() = 0;
+    virtual void devolverLibro() = 0;
+    virtual void registrarLibro() = 0;
+    virtual void gestionarUsuarios() = 0;
+    virtual void consultarCatalogo() = 0;
+    virtual ~ISistemaBiblioteca() = default;
+};
+
+class IPrestarLibro {
+public:
+    virtual void prestarLibro() = 0;
+    virtual ~IPrestarLibro() = default;
+};
+
+class Lector : public IPrestarLibro, public IDevolverLibro, public IConsultarCatalogo {
+private:
+    string nombre;
+public:
+    Lector(string n) : nombre(n) {}
+
+    void prestarLibro() override {
+        cout << nombre << " solicita el préstamo de un libro." << endl;
+    }
+
+    void devolverLibro() override {
+        cout << nombre << " devuelve un libro." << endl;
+    }
+
+    void consultarCatalogo() override {
+        cout << nombre << " consulta el catálogo de libros." << endl;
+    }
+};
+class IPrestarLibro {
+public:
+    virtual void prestarLibro() = 0;
+    virtual ~IPrestarLibro() = default;
+};
+
+class Lector : public IPrestarLibro, public IDevolverLibro, public IConsultarCatalogo {
+private:
+    string nombre;
+public:
+    Lector(string n) : nombre(n) {}
+
+    void prestarLibro() override {
+        cout << nombre << " solicita el préstamo de un libro." << endl;
+    }
+
+    void devolverLibro() override {
+        cout << nombre << " devuelve un libro." << endl;
+    }
+
+    void consultarCatalogo() override {
+        cout << nombre << " consulta el catálogo de libros." << endl;
+    }
+};
 Instrucción para el estudiante
 Analice el diseño presentado y determine si cumple adecuadamente con el Principio de Segregación de Interfaces (ISP), el cual establece que una clase no debe verse obligada a depender de métodos que no utiliza.
 En el código se observa una interfaz general llamada ISistemaBiblioteca que concentra múltiples responsabilidades, tales como prestar libros, devolverlos, registrar libros, gestionar usuarios y consultar el catálogo. Sin embargo, no todos los actores del sistema necesariamente requieren todas esas operaciones. Por ejemplo, un lector probablemente pueda consultar el catálogo, solicitar préstamos y devolver libros, pero no debería encargarse del registro de libros ni de la gestión de usuarios.
