@@ -313,6 +313,9 @@ public:
         cout << nombre << " consulta el catálogo de libros." << endl;
     }
 };
+```
+
+
 Instrucción para el estudiante
 Analice el diseño presentado y determine si cumple adecuadamente con el Principio de Segregación de Interfaces (ISP), el cual establece que una clase no debe verse obligada a depender de métodos que no utiliza.
 En el código se observa una interfaz general llamada ISistemaBiblioteca que concentra múltiples responsabilidades, tales como prestar libros, devolverlos, registrar libros, gestionar usuarios y consultar el catálogo. Sin embargo, no todos los actores del sistema necesariamente requieren todas esas operaciones. Por ejemplo, un lector probablemente pueda consultar el catálogo, solicitar préstamos y devolver libros, pero no debería encargarse del registro de libros ni de la gestión de usuarios.
