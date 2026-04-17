@@ -6,7 +6,7 @@
 
 # Semana 6 – Práctica semanal
 
-**Tema:** Objeto base para manejo de colecciones – Nivel avanzado
+**Tema:** Objeto base para manejo de colecciones 
 
 ---
 
